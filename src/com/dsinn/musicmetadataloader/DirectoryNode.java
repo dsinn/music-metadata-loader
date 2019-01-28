@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 public class DirectoryNode extends HBox {
     public static final String BUTTON_TEXT = "Choose...";
-    public static final String LABEL_TEXT = "Directory:";
+    public static final String LABEL_TEXT = "Album mp3 folder:";
     public static final String LAST_SELECTED_FILE = "./lastSelected.txt";
     public static final String NONE_SELECTED_TEXT = "None selected";
 
