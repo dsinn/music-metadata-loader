@@ -1,4 +1,4 @@
-package com.dsinn.musicmetadataloader;
+package com.dsinn.musicmetadataloader.ui;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;

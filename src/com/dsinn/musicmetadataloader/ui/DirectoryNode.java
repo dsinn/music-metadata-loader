@@ -1,4 +1,4 @@
-package com.dsinn.musicmetadataloader;
+package com.dsinn.musicmetadataloader.ui;
 
 import java.io.File;
 import java.io.IOException;

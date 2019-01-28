@@ -1,6 +1,8 @@
-package com.dsinn.musicmetadataloader;
+package com.dsinn.musicmetadataloader.ui;
 
-import javafx.application.Application;
+import com.dsinn.musicmetadataloader.ui.DirectoryNode;
+import com.dsinn.musicmetadataloader.ui.URLNode;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -13,12 +15,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class Application extends javafx.application.Application {
     public static final String RUN_TEXT = "Check metadata";
-
-	public static void main(String[] args) {
-		launch(args);
-	}
 
     @Override
     public void start(Stage stage) {
@@ -50,7 +48,7 @@ public class Main extends Application {
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Main.this.validate();
+                Application.this.validate();
             }
         });
         return button;
