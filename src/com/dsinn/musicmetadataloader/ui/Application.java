@@ -1,8 +1,5 @@
 package com.dsinn.musicmetadataloader.ui;
 
-import com.dsinn.musicmetadataloader.ui.DirectoryNode;
-import com.dsinn.musicmetadataloader.ui.URLNode;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -31,11 +28,16 @@ public class Application extends javafx.application.Application {
         return new DirectoryNode(stage);
     }
 
+    protected Node createReadmeLink() {
+        return new ReadmeLink(this);
+    }
+
     protected Pane createRootPane(Stage stage) {
         VBox root = new VBox();
         root.setAlignment(Pos.CENTER);
         root.setPadding(new Insets(10));
         root.setSpacing(10);
+        root.getChildren().add(this.createReadmeLink());
         root.getChildren().add(this.createDirectoryNode(stage));
         root.getChildren().add(this.createURLNode());
         root.getChildren().add(this.createRunNode());
