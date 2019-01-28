@@ -14,60 +14,60 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	public static final String RUN_TEXT = "Check metadata";
+    public static final String RUN_TEXT = "Check metadata";
 
 	public static void main(String[] args) {
 		launch(args);
 	}
 
-	@Override
-	public void start(Stage stage) {
-		this.setUpStage(stage);
-	}
+    @Override
+    public void start(Stage stage) {
+        this.setUpStage(stage);
+    }
 
-	public void validate() {
-		System.out.println("@TODO");
-	}
+    public void validate() {
+        System.out.println("@TODO");
+    }
 
-	protected Node createDirectoryNode(Stage stage) {
-		return new DirectoryNode(stage);
-	}
+    protected Node createDirectoryNode(Stage stage) {
+        return new DirectoryNode(stage);
+    }
 
-	protected Pane createRootPane(Stage stage) {
-		VBox root = new VBox();
-		root.setAlignment(Pos.CENTER);
-		root.setPadding(new Insets(10));
-		root.setSpacing(10);
-		root.getChildren().add(this.createDirectoryNode(stage));
-		root.getChildren().add(this.createURLNode());
-		root.getChildren().add(this.createRunNode());
-		return root;
-	}
+    protected Pane createRootPane(Stage stage) {
+        VBox root = new VBox();
+        root.setAlignment(Pos.CENTER);
+        root.setPadding(new Insets(10));
+        root.setSpacing(10);
+        root.getChildren().add(this.createDirectoryNode(stage));
+        root.getChildren().add(this.createURLNode());
+        root.getChildren().add(this.createRunNode());
+        return root;
+    }
 
-	protected Node createRunNode() {
-		Button button = new Button();
-		button.setText(RUN_TEXT);
-		button.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				Main.this.validate();
-			}
-		});
-		return button;
-	}
+    protected Node createRunNode() {
+        Button button = new Button();
+        button.setText(RUN_TEXT);
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Main.this.validate();
+            }
+        });
+        return button;
+    }
 
-	protected Node createURLNode() {
-		return new URLNode();
-	}
+    protected Node createURLNode() {
+        return new URLNode();
+    }
 
-	protected Image getIcon() {
-		return new Image(getClass().getResourceAsStream("icon.png"));
-	}
+    protected Image getIcon() {
+        return new Image(getClass().getResourceAsStream("icon.png"));
+    }
 
-	protected void setUpStage(Stage stage) {
-		stage.setTitle("Music Metadata Loader");
-		stage.setScene(new Scene(this.createRootPane(stage)));
-		stage.getIcons().add(this.getIcon());
-		stage.show();
-	}
+    protected void setUpStage(Stage stage) {
+        stage.setTitle("Music Metadata Loader");
+        stage.setScene(new Scene(this.createRootPane(stage)));
+        stage.getIcons().add(this.getIcon());
+        stage.show();
+    }
 }
